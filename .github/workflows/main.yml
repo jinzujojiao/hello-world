@@ -14,6 +14,8 @@ jobs:
   pull-request:
     name: Open PR to master
     runs-on: ubuntu-latest
+    outputs:
+      pr_number: ${{ steps.pull-request.outputs.pr_number }}
     steps:
     - uses: actions/checkout@v3
       name: checkout
@@ -33,4 +35,4 @@ jobs:
     steps:
     - uses: hmarr/auto-approve-action@v2
       with:
-        pull-request-number: ${{ jobs.pull-request.steps.pull-request.outputs.pr_number }}
+        pull-request-number: ${{ needs.pull-request.outputs.pr_number }}
