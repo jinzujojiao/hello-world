@@ -33,8 +33,8 @@ jobs:
     permissions:
       pull-requests: write
     needs: pull-request
-    if: github.actor == 'dependabot[bot]'
     steps:
+    - run: echo ${{ github.actor }}
     - uses: hmarr/auto-approve-action@v2
       with:
         pull-request-number: ${{ needs.pull-request.outputs.pr_number }}
