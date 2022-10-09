@@ -10,8 +10,9 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs: pullRequestNumber
-      required: false
+    inputs: 
+      pullRequestNumber:
+        required: false
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -29,7 +30,7 @@ jobs:
         destination_branch: "master"
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
-        github_token: ${{ secrets.MY_PAT }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
   auto-approve:
     runs-on: ubuntu-latest
     permissions:
