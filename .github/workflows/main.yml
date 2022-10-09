@@ -23,8 +23,8 @@ jobs:
     - uses: repo-sync/pull-request@v2
       name: pull-request
       with:
-        destination_branch: "app-dev"
-        pr_title: "create PR to app-dev"
+        destination_branch: "main"
+        pr_title: "create PR to main"
         pr_body: "*An automated PR*"
         pr_draft: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
