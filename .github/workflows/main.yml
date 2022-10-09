@@ -26,11 +26,4 @@ jobs:
         destination_branch: "master"
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-  auto-approve:
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    if: github.actor == 'dependabot[bot]'
-    steps:
-      - uses: hmarr/auto-approve-action@v2
+        github_token: ${{ secrets.PAT }}
