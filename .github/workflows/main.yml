@@ -10,11 +10,14 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs: pullRequestNumber
+      required: false
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   pull-request:
-    name: Open PR to app-dev
+    name: Open PR to master
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -27,3 +30,11 @@ jobs:
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
         github_token: ${{ secrets.MY_PAT }}
+  auto-approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: hmarr/auto-approve-action@v2
+      with:
+        pull-request-number: ${{ github.event.inputs.pullRequestNumber }}
