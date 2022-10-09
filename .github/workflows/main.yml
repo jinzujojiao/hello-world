@@ -26,4 +26,4 @@ jobs:
         destination_branch: "master"
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
-        github_token: ${{ secrets.PAT }}
+        github_token: ${{ secrets.MY_PAT }}
