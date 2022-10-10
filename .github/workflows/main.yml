@@ -27,6 +27,7 @@ jobs:
         destination_branch: "master"
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
+        pr_label: "automerge"
         github_token: ${{ secrets.GITHUB_TOKEN }}
   auto-approve:
     runs-on: ubuntu-latest
@@ -47,4 +48,4 @@ jobs:
       name: auto-merge
       env:
         PULL_REQUEST: ${{ needs.pull-request.outputs.pr_number }}
-        GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
