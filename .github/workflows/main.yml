@@ -39,7 +39,7 @@ jobs:
     - uses: hmarr/auto-approve-action@v2
       with:
         pull-request-number: ${{ needs.pull-request.outputs.pr_number }}
-        github-token: ${{ secrets.2021_PAT }}
+        github-token: ${{ secrets.MY2021_PAT }}
   auto-merge:
     runs-on: ubuntu-latest
     needs: [pull-request, auto-approve]
