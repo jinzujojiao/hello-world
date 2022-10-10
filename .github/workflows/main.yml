@@ -38,4 +38,4 @@ jobs:
     - uses: hmarr/auto-approve-action@v2
       with:
         pull-request-number: ${{ needs.pull-request.outputs.pr_number }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.MY_PAT }}
