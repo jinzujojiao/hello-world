@@ -28,7 +28,7 @@ jobs:
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
         pr_label: "automerge"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.MY_PAT }}
   auto-approve:
     runs-on: ubuntu-latest
     permissions:
@@ -39,7 +39,7 @@ jobs:
     - uses: hmarr/auto-approve-action@v2
       with:
         pull-request-number: ${{ needs.pull-request.outputs.pr_number }}
-        github-token: ${{ secrets.MY_PAT }}
+        github-token: ${{ secrets.MY2021_PAT }}
   auto-merge:
     runs-on: ubuntu-latest
     needs: [pull-request, auto-approve]
