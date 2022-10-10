@@ -28,7 +28,7 @@ jobs:
         pr_title: "create PR to master"
         pr_body: "*An automated PR*"
         pr_label: "automerge"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.MY_PAT }}
   auto-approve:
     runs-on: ubuntu-latest
     permissions:
